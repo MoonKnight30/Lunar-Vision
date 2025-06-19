@@ -9,6 +9,9 @@ import { Button } from "@/components/ui/button"
 import { Loader2, RotateCcw } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 
+RAPIDAPI_KEY = "Your API Key"
+ROBOFLOW_API_KEY = "Your API Key"
+
 interface AnalysisResult {
   originalImage: string
   processedImage: string
@@ -37,7 +40,7 @@ export function CraterAnalyzer() {
       method: "POST",
       url: "https://upload-images-hosting-get-url.p.rapidapi.com/upload",
       headers: {
-        "x-rapidapi-key": "33529728eamshcc73a23bbbd9290p16a292jsn209f8f04767b",
+        "x-rapidapi-key": "RAPIDAPI_KEY",
         "x-rapidapi-host": "upload-images-hosting-get-url.p.rapidapi.com",
         "Content-Type": "application/x-www-form-urlencoded",
       },
@@ -78,7 +81,7 @@ export function CraterAnalyzer() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            api_key: "Oz7G7zMT4h784DdsQpGA",
+            api_key: "ROBOFLOW_API_KEY",
             inputs: {
               image: { type: "url", value: publicImageUrl },
             },
